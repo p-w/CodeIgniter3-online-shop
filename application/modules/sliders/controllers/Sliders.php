@@ -30,7 +30,7 @@ function delete($update_id)
 }
 $this->load->library('session');
 $this->load->module('securite');
-//$this->securite->_verify_admin();
+$this->securite->_verify_admin();
 
 $submit = $this->input->post('submit',TRUE);
 if($submit=="Cancel"){
@@ -204,7 +204,7 @@ return $offset;
 function sort()
 {
       $this->load->module('securite');
-//$this->securite->_verify_admin();
+$this->securite->_verify_admin();
 $number = $this->input->post('number', TRUE);
 for ($i=1; $i <= $number ; $i++) { 
   $update_id = $_POST['order'.$i];
@@ -257,7 +257,7 @@ return $data;
  function  create(){
 $this->load->library('session');
 $this->load->module('securite');
-//$this->securite->_verify_admin();
+$this->securite->_verify_admin();
 
 
   $update_id= $this->uri->segment(3);
@@ -340,7 +340,7 @@ function  manage(){
         $this->load->library('session');
         $this->load->module('securite');
 
-//$this->securite->_verify_admin();
+$this->securite->_verify_admin();
 $data['query']= $this->get('titre_slider');
 $data['num_rows']= $data['query']->num_rows();
 $data['sort_categ'] = TRUE;
